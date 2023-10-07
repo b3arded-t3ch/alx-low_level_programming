@@ -2,16 +2,20 @@
 #include <stdio.h>
 
 /**
- *
  * main - Entry point
  *
  * Return: Always 0 (success)
  */
 int main (void)
 {
-	char ch = tolower('S');
-	
-	putchar(ch);
+	char alphabet;
+	alphabet = 'a';
+
+	while (alphabet<='z')
+	{
+		putchar(alphabet);
+		alphabet++;
+	}
 
 	return (0);
 }
