@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include <stdio.h>
 
 /**
@@ -16,6 +15,7 @@ int main (void)
 		putchar(alphabet);
 		alphabet++;
 	}
-
+	
+	putchar('\n');
 	return (0);
 }
