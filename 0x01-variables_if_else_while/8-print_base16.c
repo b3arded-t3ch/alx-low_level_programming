@@ -14,7 +14,7 @@ int main(void)
 	while (hex < 16)
 	{
 		if (hex >= 0 && hex <= 9)
-			putchar(hex +'0');
+			putchar(hex + '0');
 		if (hex >= 10 && hex <= 15)
 			putchar(hex - 10 + 'a');
 		hex++;
