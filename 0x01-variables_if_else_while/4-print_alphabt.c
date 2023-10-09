@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 /**
- *
- * main - Entry point
+ *main - Entry point
  *
  * Return: Always 0 (successful)
  */
 int main(void)
 {
-	int ch;
+	char alphabet = 'a';
 
-	for (ch = 0; ch >= 'a' && ch <= 'z';)
-		if (ch != 'e' && ch != 'q');
-		putchar(ch);
-
-		return (0);
+	while (alphabet <= 'z' && alphabet != 'e' && alphabet != 'q')
+	{
+		putchar(alphabet);
+		alphabet++;
+	}
+	putchar('\n');
+	return (0);
 }
