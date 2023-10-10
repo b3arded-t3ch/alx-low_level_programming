@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 /**
  * main - Entry point
  *
@@ -10,11 +11,13 @@
 int main(void)
 {
 
+	char x = '_putchar';
+	int result;
 
-int _putchar(void)
-	{
+	result = putchar(x);
+	putchar('\n');
 	
-	return 0;
-	}
+	return (0);
+
 
 }
