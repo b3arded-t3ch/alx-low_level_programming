@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 
 /**
@@ -7,17 +8,21 @@
  * Return: Always 0 (success)
  */
 
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
 
 int main(void)
 {
+	char str[] = "_putchar";
+	int i;
 
-	char x = '_putchar';
-	int result;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		putchar(str[i]);
+		putchar('\n');
+	}
 
-	result = putchar(x);
-	putchar('\n');
-	
 	return (0);
-
-
 }
