@@ -5,7 +5,7 @@
  *
  * @c: Number to pass to _islower function
  */
-void _islower(int c)
+int _islower(int c)
 {
 	int r;
 
