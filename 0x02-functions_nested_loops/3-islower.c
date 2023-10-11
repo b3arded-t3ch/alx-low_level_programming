@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- * test_islower - Test the _islower function
+ * _islower - tests if a letter is lower case
+ *
+ * Return: Always an int
  *
  * @c: Number to pass to _islower function
  */
