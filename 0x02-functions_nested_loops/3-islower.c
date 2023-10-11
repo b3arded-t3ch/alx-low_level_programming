@@ -3,7 +3,7 @@
 /**
  * test_islower - Test the _islower function
  *
- * @: Number to pass to _islower function
+ * @c: Number to pass to _islower function
  */
 void _islower(int c)
 {
@@ -12,4 +12,6 @@ void _islower(int c)
 	r = _islower(c);
 	_putchar(r + '0');
 	_putchar('\n');
+
+	return 0;
 }
