@@ -4,7 +4,7 @@
  * add - adds two ints and print the result
  *
  * Return: Always integer
- * 
+ *
  * @a: first integer parameter
  *
  * @b: second integer parameter
