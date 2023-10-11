@@ -7,11 +7,12 @@
  */
 int _islower(int c)
 {
-	int r;
-
-	r = _islower(c);
-	_putchar(r + '0');
-	_putchar('\n');
-
-	return 0;
+	if (c >= 'a' && c <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
