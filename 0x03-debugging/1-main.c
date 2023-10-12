@@ -3,6 +3,7 @@
 /**
  * main - causes an infinite loop
  * Return: 0
+ * @printf("Infinite loof avoided! \\o/\n");
  */
 int main(void)
 {
@@ -17,6 +18,8 @@ int main(void)
 *	{
 *		putchar(i);
 *	}
+* @\\o/\n": displayed parameter
+*
 */
 	printf("Infinite loof avoided! \\o/\n");
 
