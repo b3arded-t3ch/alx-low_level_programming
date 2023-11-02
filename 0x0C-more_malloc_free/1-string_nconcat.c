@@ -29,12 +29,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (n >= n2)
 	{
-		strcpy(ns, s1);
-		strcpy(ns + n1, s2);
+		strcat(ns, s1);
+		strcat(ns + n1, s2);
 	}
 	else
 	{
-		strcpy(ns, s1);
+		strcat(ns, s1);
 		strncat(ns + n1, s2, n);
 	}
 	ns[n1 + n] = '\0';
