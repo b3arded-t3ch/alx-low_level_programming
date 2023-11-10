@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include <stdarg.h>
-
+#include <stdio.h>
 /**
  * print_all - prints anything
  *
@@ -12,76 +11,39 @@ void print_all(const char * const format, ...)
 {
 	va_list my_box;
 	const char *format_ptr = format;
-
 	char *s;
-	char c;
-	int i;
-	float f;
-
+	int check;
 
 	va_start(my_box, format);
-
-	while (*format_ptr)
+	while (format != NULL && *format_ptr != '\0')
 	{
-		if (*(format_ptr + 1) == '\0')
+		check = 0;
+		switch (*format_ptr)
 		{
-		if (*format_ptr == 'c')
-		{
-			c = va_arg(my_box, int);
-			printf("%c", c);
-		}
-		else if (*format_ptr == 'i')
-		{
-			i = va_arg(my_box, int);
-			printf("%d", i);
-		}
-		else if (*format_ptr == 'f')
-		{
-			f = va_arg(my_box, double);
-			printf("%f", f);
-		}
-		else if (*format_ptr == 's')
-		{
+			case 'c':
+			printf("%c", va_arg(my_box, int));
+			break;
+			case 'i':
+			printf("%d", va_arg(my_box, int));
+			break;
+			case 'f':
+			printf("%f", va_arg(my_box, double));
+			break;
+			case 's':
 			s = va_arg(my_box, char *);
 			if (s == NULL)
 			{
 				printf("(nil)");
 			}
-			else
-			{
-				printf("%s", s);
-			}
+			printf("%s", s);
+			break;
+			default:
+			check = 1;
+			break;
 		}
-		}
-		else
+		if (*(format_ptr + 1) != '\0' && check == 0)
 		{
-			if (*format_ptr == 'c')
-		{
-			c = va_arg(my_box, int);
-			printf("%c, ", c);
-		}
-		else if (*format_ptr == 'i')
-		{
-			i = va_arg(my_box, int);
-			printf("%d, ", i);
-		}
-		else if (*format_ptr == 'f')
-		{
-			f = va_arg(my_box, double);
-			printf("%f, ", f);
-		}
-		else if (*format_ptr == 's')
-		{
-			s = va_arg(my_box, char *);
-			if (s == NULL)
-			{
-				printf("(nil)");
-			}
-			else
-			{
-				printf("%s, ", s);
-			}
-		}
+			printf(", ");
 		}
 		format_ptr++;
 	}
