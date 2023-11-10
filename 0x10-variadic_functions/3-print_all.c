@@ -23,6 +23,8 @@ void print_all(const char * const format, ...)
 
 	while (*format_ptr)
 	{
+		if (*(format_ptr + 1) == '\0')
+		{
 		if (*format_ptr == 'c')
 		{
 			c = va_arg(my_box, int);
@@ -49,6 +51,37 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", s);
 			}
+		}
+		}
+		else
+		{
+			if (*format_ptr == 'c')
+		{
+			c = va_arg(my_box, int);
+			printf("%c, ", c);
+		}
+		else if (*format_ptr == 'i')
+		{
+			i = va_arg(my_box, int);
+			printf("%d, ", i);
+		}
+		else if (*format_ptr == 'f')
+		{
+			f = va_arg(my_box, double);
+			printf("%f, ", f);
+		}
+		else if (*format_ptr == 's')
+		{
+			s = va_arg(my_box, char *);
+			if (s == NULL)
+			{
+				printf("(nil)");
+			}
+			else
+			{
+				printf("%s, ", s);
+			}
+		}
 		}
 		format_ptr++;
 	}
