@@ -4,8 +4,9 @@
 
 /**
  * print_dlistint - prints elements of a dl list
+ *
  * Return: number of nodes
- * h: the head node
+ * @h: the head node
  */
 size_t print_dlistint(const dlistint_t *h)
 {
