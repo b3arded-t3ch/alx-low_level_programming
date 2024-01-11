@@ -1,3 +1,6 @@
+#ifndef LIST_H
+#define LIST_H
+
 /**
  * struct dlistint_s - doubly linked list
  * @n: integer
@@ -14,3 +17,4 @@ typedef struct dlistint_s
     struct dlistint_s *next;
 } dlistint_t;
 size_t print_dlistint(const dlistint_t *h);
+#endif
