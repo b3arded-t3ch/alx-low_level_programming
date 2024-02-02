@@ -12,13 +12,13 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *node;
-	unsigned long int index;
+	unsigned long int key_dex;
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
 
 	key_dex = hash_djb2((const unsigned char *)key) % ht->size;
-	if (index >= ht->size)
+	if (key_dex >= ht->size)
 		return (NULL);
 
 	node = ht->array[key_dex];
