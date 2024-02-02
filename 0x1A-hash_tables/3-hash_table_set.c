@@ -12,14 +12,12 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int key_dex;
-	hash_node_t *current_node;
-	hash_node_t *new_node;
+	hash_node_t *current_node, *new_node;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 	{
 		return (0);
 	}
-
 	key_dex = hash_djb2((const unsigned char *)key) % ht->size;
 
 	current_node = ht->array[key_dex];
@@ -45,18 +43,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->key = strdup(key);
 	if (new_node->key == NULL)
 	{
-		free(new_node);
-		return (0);
+		return (free(new_node), 0);
 	}
 	new_node->value = strdup(value);
 	if (new_node->value == NULL)
 	{
 		free(new_node->key);
-		free(new_node);
-		return (0);
+		return (free(new_node), 0);
 	}
 	new_node->next = ht->array[key_dex];
 	ht->array[key_dex] = new_node;
-
 	return (1);
 }
